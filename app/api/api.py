@@ -11,11 +11,16 @@ def root():
     return {"message": "Fast API in python"}
 
 
-
+@app.post("/add")
 def add(a,b):
+    a= float(a)
+    b= float(b)
     return a+b
 
+@app.post("/sub")
 def sub(a,b):
+    a = float(a)
+    b = float(b)
     c=a-b
     return c
 
