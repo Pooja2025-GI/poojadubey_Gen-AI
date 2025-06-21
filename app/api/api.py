@@ -1,0 +1,26 @@
+from http.client import HTTPException
+
+from fastapi import FastAPI, HTTPException
+from starlette.responses import Response
+
+import uvicorn
+app = FastAPI()
+@app.get("/")
+
+def root():
+    return {"message": "Fast API in python"}
+
+
+
+def add(a,b):
+    return a+b
+
+def sub(a,b):
+    c=a-b
+    return c
+
+if __name__== "__main__":
+    #print("this is the initialization of my AI journey")
+    #print(sub(a=6, b=3))
+    #print(add(a=4, b=8))
+    uvicorn.run(app,port=5001)
